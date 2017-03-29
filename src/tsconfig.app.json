@@ -9,6 +9,7 @@
       "es2016",
       "dom"
     ],
+    "target": "es5",
     "outDir": "../out-tsc/app",
     "baseUrl": "",
     "types": []

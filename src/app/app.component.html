@@ -1,3 +1,28 @@
-<h1>
-  {{title}}
-</h1>
+<md-card style="max-width: 29em">
+  <md-card-header>
+    <md-card-title>Mark Time</md-card-title>
+    <md-card-subtitle>press MARK to record the time</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+  <ul style="list-style-type: none; padding: 0; margin-left: 8px;">
+    <li *ngFor= "let item of mark">
+      <div fxLayout="row">
+      <md-input-container fxFlex="0 0 4em" floatPlaceholder=always>
+        <input mdInput width="4em" type="number"
+          [(ngModel)]="item.adjust" placeholder="sec adjust"/>
+      </md-input-container>
+        <span fxFlex="0 0 4em" style="margin: 1em .5em" mdInput class="position">{{position(item)}}</span>
+      <md-input-container fxFlex="100%" floatPlaceholder=always>
+        <input mdInput type="text" [(ngModel)]="item.label" placeholder="segment label"/>
+      </md-input-container>
+    </div>
+    </li>
+  </ul>
+</md-card-content>
+<md-card-actions align=end>
+  <button md-button class="copier" [attr.data-clipboard-text]="onExport()">
+    COPY
+  </button>
+  <button md-button (click)="onMark()">MARK</button>
+</md-card-actions>
+</md-card>

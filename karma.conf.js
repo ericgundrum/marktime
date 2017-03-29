@@ -39,6 +39,9 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false
+    singleRun: false,
+    formatError: function formatError(msg) {
+      return msg.split('\n').slice(0,3).join('\n')
+    }
   })
 }

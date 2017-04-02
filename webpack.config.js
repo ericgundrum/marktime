@@ -1,4 +1,5 @@
 const path = require('path');
+const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -14,8 +15,6 @@ const nodeModules = path.join(process.cwd(), 'node_modules');
 const entryPoints = ["inline","polyfills","sw-register","styles","vendor","main"];
 const baseHref = "";
 const deployUrl = "";
-
-
 
 
 module.exports = {
@@ -189,6 +188,13 @@ module.exports = {
     ]
   },
   "plugins": [
+/*    new WebpackShellPlugin({
+      onBuildStart: [
+        'git rev-parse HEAD > dist/gitVersion.txt'
+    ]}),
+*/  new DefinePlugin({
+      appVersion: JSON.stringify(require("./package.json").version),
+    }),
     new NoEmitOnErrorsPlugin(),
     new GlobCopyWebpackPlugin({
       "patterns": [

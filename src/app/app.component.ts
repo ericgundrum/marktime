@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { Mark } from './mark'
+declare var appVersion: string
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { Mark } from './mark'
 })
 export class AppComponent {
   mark: Mark[] = []
+  version = appVersion
 
   constructor() { }
 

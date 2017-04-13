@@ -5,6 +5,7 @@ import 'hammerjs'
 
 import { AppComponent } from './app.component'
 import { Mark } from './mark'
+const colophone = { version: "test" }
 
 describe('AppComponent', () => {
   let app: AppComponent
@@ -12,7 +13,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
       ],
       imports: [ FormsModule, MaterialModule ],
     }).compileComponents()

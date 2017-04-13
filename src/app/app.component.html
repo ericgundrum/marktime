@@ -20,11 +20,11 @@
   </ul>
 </md-card-content>
 <md-card-actions align=end>
-  <a href="https://github.com/ericgundrum/marktime"
+  <div (click)="showColophone()"
   style="align-self: flex-end; text-decoration: none; opacity: 0.1;
-  font-size: 50%;">
+  font-size: 50%; cursor: pointer;">
     {{version}}
-  </a>
+  </div>
   <div style="flex-grow: 4"> </div>
   <button md-button class="copier" [attr.data-clipboard-text]="onExport()">
     COPY

@@ -6,10 +6,12 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { MaterialModule } from '@angular/material'
 
 import { AppComponent } from './app.component'
+import { ColophoneComponent } from './colophone.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ColophoneComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,6 +20,7 @@ import { AppComponent } from './app.component'
     FlexLayoutModule,
     MaterialModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ],
+  entryComponents: [ ColophoneComponent ],
 })
 export class AppModule { }

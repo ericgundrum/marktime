@@ -188,13 +188,12 @@ module.exports = {
     ]
   },
   "plugins": [
-/*    new WebpackShellPlugin({
-      onBuildStart: [
-        'git rev-parse HEAD > dist/gitVersion.txt'
-    ]}),
-*/  new DefinePlugin({
-      appVersion: JSON.stringify(require("./package.json").version),
-    }),
+    new DefinePlugin({ "colophone": {
+      "license": JSON.stringify(require("./package.json").license),
+      "version": JSON.stringify(require("./package.json").version),
+      "author": JSON.stringify(require("./package.json").author),
+      "source": JSON.stringify(require("./package.json").repository.url),
+    }}),
     new NoEmitOnErrorsPlugin(),
     new GlobCopyWebpackPlugin({
       "patterns": [

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core'
+import { MdDialog } from '@angular/material'
+
 import { Mark } from './mark'
-declare var appVersion: string
+import { ColophoneComponent } from './colophone.component'
+declare var colophone: any
 
 @Component({
   selector: 'app-root',
@@ -8,9 +11,9 @@ declare var appVersion: string
 })
 export class AppComponent {
   mark: Mark[] = []
-  version = appVersion
+  version = colophone.version
 
-  constructor() { }
+  constructor(private dialog: MdDialog) {}
 
   onExport(): string {
     if (!this.mark.length) { return '' }
@@ -23,6 +26,9 @@ export class AppComponent {
   position(mark: Mark): string {
     if (!mark || !this.mark[0]) { return 'missed the mark' }
     return this.asHourMinSec(new Date(mark.position(this.mark[0])))
+  }
+  showColophone() {
+    this.dialog.open(ColophoneComponent)
   }
 
   asHourMinSec(d: Date): string {

@@ -18,7 +18,7 @@ module.exports = function (opt) {
     description: pkg.description,
     homepage: pkg.homepage,
     license: pkg.license,
-    repo: pkg.repository.url,
+    source: pkg.repository.url,
     version: pkg.version,
     year: new Date().getFullYear(),
   }

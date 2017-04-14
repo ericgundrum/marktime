@@ -3,7 +3,7 @@ import { MdDialog } from '@angular/material'
 
 import { Mark } from './mark'
 import { ColophoneComponent } from './colophone.component'
-declare var colophone: any
+import * as colophone from '../../colophone'
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ declare var colophone: any
 })
 export class AppComponent {
   mark: Mark[] = []
-  version = colophone.version
+  version = colophone().version
 
   constructor(private dialog: MdDialog) {}
 

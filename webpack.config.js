@@ -1,5 +1,4 @@
 const path = require('path');
-const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -62,6 +61,10 @@ module.exports = {
         "exclude": [
           /\/node_modules\//
         ]
+      },
+      {
+        "test": require.resolve('./colophone.js'),
+        "loader": "val-loader"
       },
       {
         "test": /\.json$/,
@@ -192,12 +195,6 @@ module.exports = {
     ]
   },
   "plugins": [
-    new DefinePlugin({ "colophone": {
-      "license": JSON.stringify(require("./package.json").license),
-      "version": JSON.stringify(require("./package.json").version),
-      "author": JSON.stringify(require("./package.json").author),
-      "source": JSON.stringify(require("./package.json").repository.url),
-    }}),
     new NoEmitOnErrorsPlugin(),
     new GlobCopyWebpackPlugin({
       "patterns": [

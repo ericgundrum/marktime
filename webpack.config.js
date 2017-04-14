@@ -18,6 +18,10 @@ const deployUrl = "";
 
 
 module.exports = {
+  "devServer": {
+    "noInfo": true,
+    "overlay": true,
+  },
   "devtool": "source-map",
   "resolve": {
     "extensions": [

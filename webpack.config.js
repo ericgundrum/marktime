@@ -63,10 +63,6 @@ module.exports = {
         ]
       },
       {
-        "test": require.resolve('./colophone.js'),
-        "loader": "val-loader"
-      },
-      {
         "test": /\.json$/,
         "loader": "json-loader"
       },

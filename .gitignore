@@ -2,6 +2,7 @@
 
 # compiled output
 /tmp
+/src/colophone.js
 
 # dependencies
 /node_modules

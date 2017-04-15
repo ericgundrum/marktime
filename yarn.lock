@@ -4855,12 +4855,6 @@ v8flags@^2.0.11:
   dependencies:
     user-home "^1.1.1"
 
-val-loader@^1.0.2:
-  version "1.0.2"
-  resolved val-loader-1.0.2.tgz#7909198093b37cba0a96bf4f6d29de970d099d3d
-  dependencies:
-    loader-utils "^1.1.0"
-
 validate-npm-package-license@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/validate-npm-package-license/-/validate-npm-package-license-3.0.1.tgz#2804babe712ad3379459acfbe24746ab2c303fbc"

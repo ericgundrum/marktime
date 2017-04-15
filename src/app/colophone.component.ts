@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import * as colophone from '../../colophone'
+import * as colophone from '../colophone'
 
 @Component({
   selector: 'app-colophone',
@@ -21,7 +21,7 @@ import * as colophone from '../../colophone'
   `,
 })
 export class ColophoneComponent {
-  vers = colophone()
+  vers = colophone
 
   constructor() {}
 }

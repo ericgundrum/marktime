@@ -1,14 +1,9 @@
 'use strict'
 
-/**
- * @returns {*}
- */
-module.exports = function (opt) {
-  const path = require('path')
-  const pkg  = require('./package.json')
-  const spawn = require('child_process').spawnSync
-  let colophone =
-  {
+const pkg  = require('./package.json')
+const spawn = require('child_process').spawnSync
+
+require('fs').writeFileSync( 'src/colophone.js', 'module.exports = ' + JSON.stringify({
     author: pkg.author,
     build: {
       branch: spawn( 'git', [ 'branch' ] ).stdout.toString().split('* ', 2)[1].split('\n', 1)[0],
@@ -21,15 +16,4 @@ module.exports = function (opt) {
     source: pkg.repository.url,
     version: pkg.version,
     year: new Date().getFullYear(),
-  }
-
-  return {
-    code: 'module.exports = function() { return ' + JSON.stringify(colophone) + '}',
-    dependencies: [
-      require.resolve('./package.json'),
-      require.resolve('path'),
-      require.resolve('child_process'),
-    ],
-    cacheable: true
-  }
-}
+}, null, 2 ) + '\n')

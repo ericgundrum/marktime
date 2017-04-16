@@ -1,6 +1,13 @@
 <md-card style="max-width: 29em">
   <md-card-header>
-    <md-card-title>Mark Time</md-card-title>
+    <md-card-title>
+      Mark Time
+      <span (click)="showColophone()"
+      style="align-self: flex-end; text-decoration: none; opacity: 0.3;
+      font-size: .7em; cursor: pointer;">
+        {{version}}
+      </span>
+    </md-card-title>
     <md-card-subtitle>press MARK to record the time</md-card-subtitle>
   </md-card-header>
   <md-card-content>
@@ -20,12 +27,6 @@
   </ul>
 </md-card-content>
 <md-card-actions align=end>
-  <div (click)="showColophone()"
-  style="align-self: flex-end; text-decoration: none; opacity: 0.1;
-  font-size: 50%; cursor: pointer;">
-    {{version}}
-  </div>
-  <div style="flex-grow: 4"> </div>
   <button md-button class="copier" [attr.data-clipboard-text]="onExport()">
     COPY
   </button>

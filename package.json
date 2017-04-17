@@ -15,7 +15,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node makeColophone && webpack-dev-server --port=4200",
-    "build": "webpack",
+    "build": "node makeColophone && webpack",
     "test": "karma start ./karma.conf.js",
     "lint": "ng lint",
     "e2e": "protractor ./protractor.conf.js",
@@ -77,6 +77,7 @@
     "tslint": "^5.1.0",
     "typescript": "~2.2.1",
     "url-loader": "latest",
+    "webpack": "latest",
     "webpack-dev-server": "latest"
   }
 }

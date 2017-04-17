@@ -1,6 +1,7 @@
 # Mark Time
 Record and label the times of a sequence of events.
 Then export the list to the clipboard.
+[Try it](https://marktime.bencharts.com).
 
 ## Capabilities
 - press _Mark_ to add a segment timestamp to the list

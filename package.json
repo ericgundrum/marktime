@@ -15,7 +15,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node makeColophone && webpack-dev-server --port=4200",
-    "build": "node makeColophone && webpack",
+    "build": "node makeColophone && webpack -p",
     "test": "karma start ./karma.conf.js",
     "lint": "ng lint",
     "e2e": "protractor ./protractor.conf.js",

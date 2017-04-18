@@ -17,7 +17,9 @@ import * as colophone from '../colophone'
     {{vers.build.rev}}
     ({{vers.build.branch}})
     {{vers.build.clean ? "" : "modified"}}<br/>
-    copyright &copy;{{vers.year}} {{vers.author.name}}<br/>
+    copyright &copy;{{vers.year}}
+    <a target="_blank" href="{{vers.author.url}}">
+    {{vers.author.name}}</a><br/>
     usage and <a target="_blank" href="{{vers.source}}">source code</a>
     governed by the
     <a target="_blank" href="https://spdx.org/licenses/{{vers.license}}.html">
